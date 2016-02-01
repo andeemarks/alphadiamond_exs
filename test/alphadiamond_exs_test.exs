@@ -3,10 +3,6 @@ defmodule ALPHADIAMONDTest do
   doctest ALPHADIAMOND
 
 
-# 	?_assert(status_after_spec_validation("A")),
-# 	?_assert(status_after_spec_validation('A')),
-# 	?_assert(status_after_spec_validation("c")),
-# 	?_assert(status_after_spec_validation("  E   ")),
   test "spec validation with valid specs" do
   	assert ALPHADIAMOND.is_valid_spec?("A")
   	assert ALPHADIAMOND.is_valid_spec?("c")
@@ -21,6 +17,9 @@ defmodule ALPHADIAMONDTest do
   test "spec validation with invalid specs" do
   	refute ALPHADIAMOND.is_valid_spec?("AA")
   	refute ALPHADIAMOND.is_valid_spec?('A')
+  	refute ALPHADIAMOND.is_valid_spec?('4')
+  	refute ALPHADIAMOND.is_valid_spec?('{')
+  	refute ALPHADIAMOND.is_valid_spec?("")
   	
   end
 end
