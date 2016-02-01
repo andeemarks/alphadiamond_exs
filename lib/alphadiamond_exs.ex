@@ -1,0 +1,2 @@
+defmodule ALPHADIAMOND do
+end
