@@ -5,4 +5,8 @@ defmodule ALPHADIAMOND do
 	def is_valid_spec?(_) do
 		false
 	end
+
+	def row_instructions_for(letter) do
+		"A"
+	end
 end

@@ -2,6 +2,14 @@ defmodule ALPHADIAMONDTest do
   use ExUnit.Case
   doctest ALPHADIAMOND
 
+# row_instructions_test_() -> [
+# 	?_assertEqual("A", alphadiamond_app:row_instructions_for('A')),
+# 	?_assertEqual("ABA", alphadiamond_app:row_instructions_for('B')),
+# 	?_assertEqual("ABCBA", alphadiamond_app:row_instructions_for('C'))
+# ].
+  test "row instructions are valid for letter" do
+		assert ALPHADIAMOND.row_instructions_for("A") == "A"  	
+  end
 
   test "spec validation with valid specs" do
   	assert ALPHADIAMOND.is_valid_spec?("A")
@@ -9,11 +17,6 @@ defmodule ALPHADIAMONDTest do
   	assert ALPHADIAMOND.is_valid_spec?("    E       ")
   end
 
-# 	?_assertNot(status_after_spec_validation("AA")),
-# 	?_assertNot(status_after_spec_validation(" ")),
-# 	?_assertNot(status_after_spec_validation("4")),
-# 	?_assertNot(status_after_spec_validation("{")),
-# 	?_assertNot(status_after_spec_validation(""))
   test "spec validation with invalid specs" do
   	refute ALPHADIAMOND.is_valid_spec?("AA")
   	refute ALPHADIAMOND.is_valid_spec?('A')
@@ -43,24 +46,4 @@ end
 # 	?_assertEqual("J                 J", row_after_strip("J"))
 # ].
 
-# row_instructions_test_() -> [
-# 	?_assertEqual("A", alphadiamond_app:row_instructions_for('A')),
-# 	?_assertEqual("ABA", alphadiamond_app:row_instructions_for('B')),
-# 	?_assertEqual("ABCBA", alphadiamond_app:row_instructions_for('C'))
-# ].
 
-# status_after_spec_validation(Spec) ->
-# 	{SpecStatus, _} = alphadiamond_app:is_valid_spec(Spec),
-# 	SpecStatus.
-
-# valid_spec_test_() -> [
-# 	?_assert(status_after_spec_validation("A")),
-# 	?_assert(status_after_spec_validation('A')),
-# 	?_assert(status_after_spec_validation("c")),
-# 	?_assert(status_after_spec_validation("  E   ")),
-# 	?_assertNot(status_after_spec_validation("AA")),
-# 	?_assertNot(status_after_spec_validation(" ")),
-# 	?_assertNot(status_after_spec_validation("4")),
-# 	?_assertNot(status_after_spec_validation("{")),
-# 	?_assertNot(status_after_spec_validation(""))
-# ].
