@@ -9,6 +9,8 @@ defmodule ALPHADIAMONDTest do
 # ].
   test "row instructions are valid for letter" do
 		assert ALPHADIAMOND.row_instructions_for("A") == "A"  	
+		assert ALPHADIAMOND.row_instructions_for("B") == "ABA"  	
+		assert ALPHADIAMOND.row_instructions_for("C") == "ABCBA"  	
   end
 
   test "spec validation with valid specs" do
