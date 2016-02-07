@@ -25,7 +25,13 @@ defmodule ALPHADIAMOND do
 	 		instructions = row_instructions_for(letter)
 	 		IO.puts("\n")
 			Enum.map(String.codepoints(instructions), fn(instruction) -> IO.puts(row_for(instruction)) end)		
+		else
+			IO.puts("INVALID INPUT.")
 		end
 	end
 	def diamond() do false end
+
+	def main(args) do
+    diamond(List.first(args))
+  end
 end
