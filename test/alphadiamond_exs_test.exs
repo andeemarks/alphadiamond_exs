@@ -28,20 +28,16 @@ defmodule ALPHADIAMONDTest do
 		assert String.strip(ALPHADIAMOND.row_for("B")) == "B B"
 		assert String.strip(ALPHADIAMOND.row_for("J")) == "J                 J"
   end
+
+  test "smoke test with positive data" do
+  	assert ALPHADIAMOND.diamond("A")
+  end
+
+  test "smoke test with negative data" do
+  	refute ALPHADIAMOND.diamond(";")
+  	refute ALPHADIAMOND.diamond("")
+  	refute ALPHADIAMOND.diamond()
+  end
 end
-
-# positive_smoke_test_() -> [
-#     ?_assertEqual(ok, alphadiamond_app:diamond(['A'])),
-#     ?_assertEqual(ok, alphadiamond_app:diamond(["A"]))
-# ].	
-
-# negative_smoke_test_() -> [
-# 	?_assertEqual(error, alphadiamond_app:diamond([";"])),
-# 	?_assertEqual(error, alphadiamond_app:diamond()),
-# 	?_assertEqual(error, alphadiamond_app:diamond([]))
-# ].
-
-# row_after_strip(Letter) -> string:strip(alphadiamond_app:row_for(Letter)).
-
 
 

@@ -19,4 +19,13 @@ defmodule ALPHADIAMOND do
 		everything_but_letter = elem(Regex.compile("[^" <> letter <> "]"), 1)
 		Regex.replace(everything_but_letter, @row_template, " ")
 	end
+
+	def diamond(letter) do
+		if (is_valid_spec?(letter)) do
+	 		instructions = row_instructions_for(letter)
+	 		IO.puts("\n")
+			Enum.map(String.codepoints(instructions), fn(instruction) -> IO.puts(row_for(instruction)) end)		
+		end
+	end
+	def diamond() do false end
 end
